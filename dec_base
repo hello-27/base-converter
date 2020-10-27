@@ -1,0 +1,20 @@
+def dec_base(aTen,aBase):
+    import math
+    import string
+    
+    letter_dict = dict(enumerate(string.ascii_uppercase, 10))
+    ret = []
+    
+    while True:
+        ret.insert(0,aTen%aBase)
+        aTen=math.floor(aTen/aBase)
+        if aTen==0:
+            break
+        else:
+            pass
+    
+    ret = [str(x if x<10 else letter_dict[x])  for x in ret]
+        
+    return ''.join(ret)
+
+dec_base(69420,21)
